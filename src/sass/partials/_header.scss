@@ -1,0 +1,15 @@
+.header {
+  position: relative;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../images/background.png');
+  background-position: top center;
+  background-size: cover;
+  color: $light-color;
+
+  &__container {
+    min-height: 1007px;
+    background-color: yellow;
+  }
+
+
+}

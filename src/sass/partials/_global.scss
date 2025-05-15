@@ -13,6 +13,12 @@ body {
   font-family: $font-family;
 }
 
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
 .main-header {
   text-align: center;
   margin: 0 auto;
