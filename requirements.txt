@@ -1,0 +1,9 @@
+/sass
+  /pages
+  _variables.scss
+  _normalize.scss
+  _bootstrap.scss
+  _layout.scss
+  _typography
+  _global.scss
+  style.scss
