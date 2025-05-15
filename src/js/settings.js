@@ -1,0 +1,36 @@
+
+// this object is used for querySelect method
+export const select = {
+  home: {},
+  contact: {},
+  products: {}
+};
+
+// this object is used for adding, removing and toggling classes
+export const classNames = {
+  home: {},
+  contact: {},
+  products: {}
+};
+
+// this object is used for constants
+export const settings = {
+  db: {
+    ulr: 'localhost'
+  }
+};
+
+// export const templates = {
+//   menuProduct: Handlebars.compile(
+//     document.querySelector(select.templateOf.menuProduct).innerHTML
+//   ),
+//   cartProduct: Handlebars.compile(
+//     document.querySelector(select.templateOf.cartProduct).innerHTML
+//   ),
+//   bookingWidget: Handlebars.compile(
+//     document.querySelector(select.templateOf.bookingWidget).innerHTML
+//   ),
+//   homePage: Handlebars.compile(
+//     document.querySelector(select.templateOf.homePage).innerHTML
+//   ),
+// };
