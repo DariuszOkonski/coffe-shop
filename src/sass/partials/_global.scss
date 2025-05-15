@@ -1,3 +1,9 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -5,5 +11,27 @@ html {
 body {
   background-color: $light-color;
   font-family: $font-family;
-  font-style: $font-style-secondary;
+}
+
+.main-header {
+  text-align: center;
+  margin: 0 auto;
+  
+  &__text {
+    font-size: 7.5rem;
+    text-transform: uppercase;
+    color: $tertiary-text-color;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+
+  &::after {
+    content: '';
+    margin: 0 auto;
+    margin-top: 4.6rem;
+    display: block;
+    width: 777px;
+    height: 6px;
+    background-color: $main-color;
+  }
 }
