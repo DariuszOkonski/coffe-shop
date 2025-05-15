@@ -1,9 +1,28 @@
+client requirements
+1 - 3 subpages - home, products, contact
+2 - it has to be pixel perfect on large pages, we have designes
+3 - build also responsiwe according you ideas
+4 - hamburger menu is not a requirement, but it would be nice if it is there
+5 - products has to be taken from API, so we have to use handlebars
+6 - page has to load quickly, code has to be semantic, use lighthouse in devtools
+7 - it has to be single page application, no reloads when move between pages
+
+technical requirements
+1 - app object
+2 - build required classes, has to be at least one for Porducts
+3 - products has to handlebars
+4 - for API use json-server
+5 - static text can be put to index.html
+6 - try not to use external libraries, if you have to than use bootstrap partially
+7 - for icons use font-awesome or fontello or glypther
+8 - Fontello or Glypther alow to reduce size of font-awesome by not loading all fonts
+
 /sass
   /pages
   _variables.scss
   _normalize.scss
   _bootstrap.scss
-  _layout.scss
-  _typography
-  _global.scss
+  _layout.scss -> global styles here, for example .container
+  _typography -> headers, subheaders here
+  _global.scss -> buttons, headers, small sections
   style.scss
