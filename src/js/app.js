@@ -1,4 +1,16 @@
 import { select } from './settings.js';
 
-console.log('script working');
-console.log(select);
+const app = {
+  init: function() {
+    const thisApp = this;
+      
+    thisApp.initProduct();
+  },
+
+  initProduct: function() {
+    console.log('initProduct');
+    console.log(select);
+  }
+};
+
+app.init();

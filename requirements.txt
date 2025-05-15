@@ -8,12 +8,12 @@ client requirements
 7 - it has to be single page application, no reloads when move between pages
 
 technical requirements
-1 - app object
-2 - build required classes, has to be at least one for Porducts
-3 - products has to handlebars
+1 - DONE - app object
+2 - DONE - build required classes, has to be at least one for Product
+3 - products has to use handlebars
 4 - for API use json-server
 5 - static text can be put to index.html
-6 - try not to use external libraries, if you have to than use bootstrap partially
+6 - DONE - try not to use external libraries, if you have to than use bootstrap partially
 7 - for icons use font-awesome or fontello or glypther
 8 - Fontello or Glypther alow to reduce size of font-awesome by not loading all fonts
 
