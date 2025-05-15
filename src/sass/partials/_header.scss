@@ -1,15 +1,111 @@
 .header {
-  position: relative;
   width: 100%;
   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../images/background.png');
   background-position: top center;
   background-size: cover;
   color: $light-color;
-
+  
   &__container {
-    min-height: 1007px;
-    background-color: yellow;
+    position: relative;
+    min-height: 100rem;
+    // background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
+  // &__navigation {
+  //   background-color: blue;
+  // }
 
+  &__content {
+    // background-color: green;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 27.5rem;
+      height: 0.6rem;
+      background-color: $main-color;
+      margin: 0 auto;
+      margin-top: 7.6rem;
+    }
+  }
+
+  &__first-text, &__second-text {
+    font-size: 10rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.4rem;
+    color: $tertiary-text-color;
+  }
+
+  // &__first-text {
+  //   background-color: red;
+  // }
+
+  &__second-text {
+    margin-left: 16rem;
+  }
+
+  &__footer {
+    font-size: 3.4rem;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.8rem;
+  }
+
+  &__discover {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+  }
+
+  &__arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 4px solid $light-color;
+    cursor: pointer;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__header {
+    font-size: 3.6rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+  }
+
+  &__text {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+  }
+
+  &__list-items {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 3.3rem;
+  }
+
+  &__list-item {
+    font-size: 2rem;
+    text-transform: uppercase;
+
+    a {
+      color: $quaternary-text-color;
+    }
+  }
 }
