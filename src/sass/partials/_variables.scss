@@ -1,13 +1,19 @@
-$main-color: #BEA67C;
-$light-color: #FFFFFF;
+$main-color: #bea67c;
+$light-color: #ffffff;
 
 $primary-text-color: #010101;
 $secondary-text-color: #535353;
-$tertiary-text-color: #BEA67C;
-$quaternary-text-color: #9C9C9C;
+$tertiary-text-color: #bea67c;
+$quaternary-text-color: #9c9c9c;
 
-$font-family: "Source Sans 3", sans-serif;
+$font-family: 'Source Sans 3', sans-serif;
 $font-style-primary: normal;
 $font-style-secondary: italic;
 
 $font-size-xxl: 2rem;
+
+$screen-xsm: 478px; // <
+$screen-sm: 576px; // >=
+$screen-md: 768px; // >=
+$screen-lg: 992px; // >=
+$screen-xl: 1200px; // >=
