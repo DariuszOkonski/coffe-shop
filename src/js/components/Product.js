@@ -11,7 +11,7 @@ class Product {
   render(element) {
     const thisProduct = this;
     thisProduct.dom = {};
-    thisProduct.dom.productPageContainer = document.querySelector(select.pageContainerOf.products);
+    thisProduct.dom.pageContainer = document.querySelector(select.pageContainerOf.products);
     const generatedHTML = templates.productsPage();
     thisProduct.dom.wrapper = element;
     thisProduct.dom.wrapper.innerHTML = generatedHTML;

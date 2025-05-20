@@ -13,17 +13,30 @@ const app = {
     thisApp.initProducts();
     thisApp.initContact();
 
-    thisApp.initPages();
+    thisApp.initNavigation();
   },
-  initPages: function() {
+  initNavigation: function() {
     const thisApp = this;
-    console.log('initPages');
+    console.log('initNavigation');
     thisApp.dom.navigation = document.querySelectorAll(select.nav.links);
+    thisApp.dom.navigationContainer = document.querySelector(select.nav.container);
     
     thisApp.dom.navigation[0].classList.add(classNames.nav.active);
     thisApp.home.dom.homePageContainer.classList.add(classNames.pages.active);
 
-    console.log(thisApp);
+    thisApp.dom.navigationContainer.addEventListener('click', (event) => {
+      thisApp.removeActiveNavigation();
+      event.target.classList.add(classNames.nav.active);
+
+      console.log('============');
+      const idFromHash = event.target.getAttribute('href').replace('#/', '');
+      console.log(thisApp[idFromHash]);
+
+      // thisApp[idFromHash].dom.productPage .classList.add(classNames.pages.active);
+    });
+
+
+
 
     
 
@@ -62,6 +75,15 @@ const app = {
       .catch((err) => {
         console.log(err.message);
       });
+  },
+
+  removeActiveNavigation: function() {
+    const thisApp = this;
+    thisApp.dom.navigation.forEach((item) => {
+      if(item.classList.contains(classNames.nav.active)) {
+        item.classList.remove(classNames.nav.active);
+      }
+    });
   }
 };
 

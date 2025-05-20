@@ -5,6 +5,7 @@ export const select = {
   contact: {},
   products: {},
   nav: {
+    container: '.nav__list-items',
     links: '.nav__list-items a'
   },
   templateOf: {
