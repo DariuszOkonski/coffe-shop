@@ -1,4 +1,4 @@
-import { templates } from '../settings.js';
+import { select, templates } from '../settings.js';
 
 class Home {
   constructor(element) {
@@ -10,6 +10,7 @@ class Home {
   render(element) {
     const thisHome = this;
     thisHome.dom = {};
+    thisHome.dom.homePageContainer = document.querySelector(select.pageContainerOf.home);
     const generatedHTML = templates.homePage();
     thisHome.dom.wrapper = element;
     thisHome.dom.wrapper.innerHTML = generatedHTML;

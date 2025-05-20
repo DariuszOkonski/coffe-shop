@@ -1,4 +1,4 @@
-import { templates } from '../settings.js';
+import { select, templates } from '../settings.js';
 
 class Product {
   constructor(element) {
@@ -11,6 +11,7 @@ class Product {
   render(element) {
     const thisProduct = this;
     thisProduct.dom = {};
+    thisProduct.dom.productPageContainer = document.querySelector(select.pageContainerOf.products);
     const generatedHTML = templates.productsPage();
     thisProduct.dom.wrapper = element;
     thisProduct.dom.wrapper.innerHTML = generatedHTML;

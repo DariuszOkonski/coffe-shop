@@ -12,6 +12,11 @@ export const select = {
     products: '#template-products',
     contact: '#template-contact'
   },
+  pageContainerOf: {
+    home: '#home',
+    products: '#products',
+    contact: '#contact'
+  },
   containerOf: {
     pages: '#pages',
     home: '.home-wrapper',
@@ -24,7 +29,13 @@ export const select = {
 export const classNames = {
   home: {},
   contact: {},
-  products: {}
+  products: {},
+  nav: {
+    active: 'active'
+  },
+  pages: {
+    active: 'active'
+  }
 };
 
 // this object is used for constants
@@ -46,18 +57,3 @@ export const templates = {
     document.querySelector(select.templateOf.contact).innerHTML
   )
 };
-
-// export const templates = {
-//   menuProduct: Handlebars.compile(
-//     document.querySelector(select.templateOf.menuProduct).innerHTML
-//   ),
-//   cartProduct: Handlebars.compile(
-//     document.querySelector(select.templateOf.cartProduct).innerHTML
-//   ),
-//   bookingWidget: Handlebars.compile(
-//     document.querySelector(select.templateOf.bookingWidget).innerHTML
-//   ),
-//   homePage: Handlebars.compile(
-//     document.querySelector(select.templateOf.homePage).innerHTML
-//   ),
-// };

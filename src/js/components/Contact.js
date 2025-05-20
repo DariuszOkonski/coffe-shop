@@ -1,4 +1,4 @@
-import { templates } from '../settings.js';
+import { select, templates } from '../settings.js';
 
 class Contact {
   constructor(element) {
@@ -10,6 +10,7 @@ class Contact {
   render(element) {
     const thisContact = this;
     thisContact.dom = {};
+    thisContact.dom.contactPageContainer = document.querySelector(select.pageContainerOf.contact);
     const generatedHTML = templates.contactPage();
     thisContact.dom.wrapper = element;
     thisContact.dom.wrapper.innerHTML = generatedHTML;
