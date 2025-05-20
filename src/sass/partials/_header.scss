@@ -99,6 +99,10 @@
     a {
       color: $quaternary-text-color;
     }
+
+    a.active {
+      color: $tertiary-text-color;
+    }
   }
 }
 
