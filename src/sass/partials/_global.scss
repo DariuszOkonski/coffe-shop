@@ -48,5 +48,9 @@ a {
 }
 
 #home, #products, #contact {
-  background-color: yellow;
+  display: none;
+}
+
+#home.active, #products.active, #contact.active {
+  display: block;
 }
