@@ -16,7 +16,8 @@ export const classNames = {
 // this object is used for constants
 export const settings = {
   db: {
-    ulr: 'localhost'
+    url: 'http://localhost:3232',
+    products: 'products'
   }
 };
 
