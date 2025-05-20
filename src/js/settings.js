@@ -4,9 +4,19 @@ export const select = {
   home: {},
   contact: {},
   products: {},
-  templateOf: {},
+  nav: {
+    links: '.nav__list-items a'
+  },
+  templateOf: {
+    home: '#template-home',
+    products: '#template-products',
+    contact: '#template-contact'
+  },
   containerOf: {
-    pages: '#pages'
+    pages: '#pages',
+    home: '.home-wrapper',
+    products: '.products-wrapper',
+    contact: '.contact-wrapper'
   }
 };
 
@@ -26,8 +36,14 @@ export const settings = {
 };
 
 export const templates = {
-  products: Handlebars.compiled(
-    document.querySelector(select.containerOf.pages).innerHTML
+  homePage: Handlebars.compile(
+    document.querySelector(select.templateOf.home).innerHTML
+  ),
+  productsPage: Handlebars.compile(
+    document.querySelector(select.templateOf.products).innerHTML
+  ),
+  contactPage: Handlebars.compile(
+    document.querySelector(select.templateOf.contact).innerHTML
   )
 };
 

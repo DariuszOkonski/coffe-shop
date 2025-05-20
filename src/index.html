@@ -25,9 +25,9 @@
           </div>
           <div class="nav__pages">
             <ul class="nav__list-items">
-              <li class="nav__list-item"><a href="#">home</a></li>
-              <li class="nav__list-item"><a href="#">products</a></li>
-              <li class="nav__list-item"><a href="#">contact</a></li>
+              <li class="nav__list-item"><a href="#home">home</a></li>
+              <li class="nav__list-item"><a href="#products">products</a></li>
+              <li class="nav__list-item"><a href="#contact">contact</a></li>
             </ul>
           </div>
         </nav>
@@ -42,15 +42,30 @@
       </div>
     </header>
 
-    <main id="#pages">
+    <main id="pages">
+      <section id="home">
+        <div class="home-wrapper container"></div>
+      </section>
+
+      <section id="products">
+        <div class="products-wrapper container"></div>
+      </section>
+
+      <section id="contact">
+        <div class="contact-wrapper container"></div>
+      </section>
     </main>
 
     <script id="template-home" type="text/x-handlebars-template">
+      <hr>
       <h1>HOME</h1>
+      <hr>
     </script>
 
     <script id="template-products" type="text/x-handlebars-template">
+      <hr>
       <h1>PRODUCTS</h1>
+      <hr>
     </script>
 
     <script id="template-contact" type="text/x-handlebars-template">

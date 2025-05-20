@@ -1,13 +1,19 @@
+import { templates } from '../settings.js';
+
 class Product {
-  constructor() {
+  constructor(element) {
     const thisProduct = this;
 
-    thisProduct.render();
     thisProduct.getData();
+    thisProduct.render(element);
   }
 
-  render() {
-
+  render(element) {
+    const thisProduct = this;
+    thisProduct.dom = {};
+    const generatedHTML = templates.productsPage();
+    thisProduct.dom.wrapper = element;
+    thisProduct.dom.wrapper.innerHTML = generatedHTML;
   }
 
   getData() {
