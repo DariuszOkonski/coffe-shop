@@ -19,7 +19,7 @@ export const select = {
     contact: '#contact'
   },
   containerOf: {
-    pages: '#pages',
+    pages: '#pages section',
     home: '.home-wrapper',
     products: '.products-wrapper',
     contact: '.contact-wrapper'

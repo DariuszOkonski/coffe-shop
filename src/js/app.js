@@ -13,26 +13,34 @@ const app = {
     thisApp.initProducts();
     thisApp.initContact();
 
+    thisApp.intiPages();
     thisApp.initNavigation();
   },
+  intiPages: function() {
+    const thisApp = this;
+    thisApp.dom.navigation = document.querySelectorAll(select.nav.links);
+    thisApp.dom.navigationContainer = document.querySelector(select.nav.container);
+    thisApp.dom.pages = document.querySelectorAll(select.containerOf.pages);
+  },
+
   initNavigation: function() {
     const thisApp = this;
     console.log('initNavigation');
-    thisApp.dom.navigation = document.querySelectorAll(select.nav.links);
-    thisApp.dom.navigationContainer = document.querySelector(select.nav.container);
+    // thisApp.dom.navigation = document.querySelectorAll(select.nav.links);
+    // thisApp.dom.navigationContainer = document.querySelector(select.nav.container);
+    // thisApp.dom.pages = document.querySelectorAll(select.containerOf.pages);
     
     thisApp.dom.navigation[0].classList.add(classNames.nav.active);
-    thisApp.home.dom.homePageContainer.classList.add(classNames.pages.active);
+    thisApp.home.dom.pageContainer.classList.add(classNames.pages.active);
 
     thisApp.dom.navigationContainer.addEventListener('click', (event) => {
       thisApp.removeActiveNavigation();
       event.target.classList.add(classNames.nav.active);
 
       console.log('============');
+      thisApp.removeActivePages();
       const idFromHash = event.target.getAttribute('href').replace('#/', '');
-      console.log(thisApp[idFromHash]);
-
-      // thisApp[idFromHash].dom.productPage .classList.add(classNames.pages.active);
+      thisApp[idFromHash].dom.pageContainer.classList.add(classNames.pages.active);
     });
 
 
@@ -75,6 +83,17 @@ const app = {
       .catch((err) => {
         console.log(err.message);
       });
+  },
+
+  // TODO: refactor removeActivePages and removeActiveNavigation
+  removeActivePages: function() {
+    const thisApp = this;
+
+    thisApp.dom.pages.forEach((item) => {
+      if(item.classList.contains(classNames.pages.active)) {
+        item.classList.remove(classNames.pages.active);
+      }
+    });
   },
 
   removeActiveNavigation: function() {
