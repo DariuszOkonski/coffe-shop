@@ -3,7 +3,11 @@
 export const select = {
   home: {},
   contact: {},
-  products: {}
+  products: {},
+  templateOf: {},
+  containerOf: {
+    pages: '#pages'
+  }
 };
 
 // this object is used for adding, removing and toggling classes
@@ -19,6 +23,12 @@ export const settings = {
     url: 'http://localhost:3232',
     products: 'products'
   }
+};
+
+export const templates = {
+  products: Handlebars.compiled(
+    document.querySelector(select.containerOf.pages).innerHTML
+  )
 };
 
 // export const templates = {
