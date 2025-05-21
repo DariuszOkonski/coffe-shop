@@ -5,5 +5,87 @@
   background-position: center center;
   background-size: cover;
   min-height: 88.5rem;
-  padding: 10rem 0;
+  padding: 10rem 0.5rem;
+
+  &__text,
+  &__footer {
+    color: $light-color;
+    font-size: 4rem;
+    font-style: $font-style-secondary;
+  }
+
+  &__text {
+    margin: 6.8rem 0;
+    padding-right: 47.3rem;
+  }
+
+  &__footer {
+    display: block;
+    text-align: right;
+  }
+}
+
+// max-width: 1200px
+@media (max-width: $screen-xl) {
+  .about-us {
+    &__text,
+    &__footer {
+      font-size: 3rem;
+    }
+
+    &__text {
+      padding-right: 38rem;
+    }
+  }
+}
+
+// max-width: 992px
+@media (max-width: $screen-lg) {
+  .about-us {
+    &__text {
+      padding-right: 26rem;
+    }
+  }
+}
+
+// max-width: 768px
+@media (max-width: $screen-md) {
+  .about-us {
+    &__text,
+    &__footer {
+      font-size: 3rem;
+    }
+
+    &__text {
+      padding-right: 12rem;
+    }
+  }
+}
+
+// max-width: 576px
+@media (max-width: $screen-sm) {
+  .about-us {
+    &__text,
+    &__footer {
+      font-size: 2.6rem;
+    }
+
+    &__text {
+      padding-right: 6rem;
+    }
+  }
+}
+
+// max-width: 478px
+@media (max-width: $screen-xsm) {
+  .about-us {
+    &__text,
+    &__footer {
+      font-size: 2rem;
+    }
+
+    &__text {
+      padding-right: 2rem;
+    }
+  }
 }
