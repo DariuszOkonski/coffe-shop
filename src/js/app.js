@@ -42,7 +42,6 @@ const app = {
       thisApp.removeActiveNavigation();
       event.target.classList.add(classNames.nav.active);
 
-      console.log('============');
       thisApp.removeActivePages();
       const idFromHash = event.target.getAttribute('href').replace('#/', '');
       thisApp[idFromHash].dom.pageContainer.classList.add(
