@@ -73,8 +73,8 @@
       </section>
     </main>
 
-    <footer>
-      <h2>Footer 2025</h2>
+    <footer class="footer">
+      <p>&copy; 2025 EL TIGRE inc.</p>
     </footer>
 
     <!-- <script id="template-home" type="text/x-handlebars-template">
@@ -90,9 +90,32 @@
     </script>
 
     <script id="template-contact" type="text/x-handlebars-template">
-      <hr />
-      <h1>CONTACT</h1>
-      <hr />
+      <section class='contact'>
+        <div class='main-header'>
+          <h2 class='main-header__text'>contact us</h2>
+        </div>
+
+        <form action='#' class='contact__form container'>
+          <div class='contact__form-item'>
+            <label for='name'>name</label>
+            <input type='text' id='name' />
+          </div>
+
+          <div class='contact__form-item'>
+            <label for='title'>title</label>
+            <input type='text' id='title' />
+          </div>
+
+          <div class='contact__form-item'>
+            <label for='message'>message</label>
+            <textarea id='message'></textarea>
+          </div>
+
+          <div class='contact__form-button'>
+            <button class='btn'>submit</button>
+          </div>
+        </form>
+      </section>
     </script>
 
     <script src="js/app.js" type="module"></script>

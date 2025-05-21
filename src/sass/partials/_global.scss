@@ -15,6 +15,18 @@ body {
   font-family: $font-family;
 }
 
+.btn {
+  display: inline-block;
+  padding: 1.5rem 3rem;
+  font-size: $font-size-xxl;
+  font-style: $font-style-primary;
+  text-transform: uppercase;
+  color: $light-color;
+  background-color: $main-color;
+  text-align: center;
+  border: none;
+}
+
 a {
   text-decoration: none;
   color: $light-color;
@@ -24,6 +36,13 @@ a {
   max-width: 125rem;
   margin: 0 auto;
   padding: 0.5rem;
+}
+
+.footer {
+  text-align: center;
+  font-size: 1.6rem;
+  padding: 1rem 0.5rem;
+  color: $secondary-text-color;
 }
 
 .main-header {
