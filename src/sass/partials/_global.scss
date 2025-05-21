@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -27,12 +29,12 @@ a {
 .main-header {
   text-align: center;
   margin: 0 auto;
-  
+
   &__text {
     font-size: 7.5rem;
     text-transform: uppercase;
     color: $tertiary-text-color;
-    letter-spacing: 2px;
+    letter-spacing: 2rem;
     font-weight: bold;
   }
 
@@ -41,16 +43,97 @@ a {
     margin: 0 auto;
     margin-top: 4.6rem;
     display: block;
-    width: 777px;
-    height: 6px;
+    width: 77.7rem;
+    height: 0.6rem;
     background-color: $main-color;
   }
 }
 
-#home, #products, #contact {
+#home,
+#products,
+#contact {
   display: none;
 }
 
-#home.active, #products.active, #contact.active {
+#home.active,
+#products.active,
+#contact.active {
   display: block;
+}
+
+// max-width: 1200px
+@media (max-width: $screen-xl) {
+  .main-header {
+    &__text {
+      font-size: 7.5rem;
+      letter-spacing: 1.2rem;
+    }
+
+    &::after {
+      margin-top: 4.6rem;
+      width: 77.7rem;
+      height: 0.6rem;
+    }
+  }
+}
+
+// max-width: 992px
+@media (max-width: $screen-lg) {
+  .main-header {
+    &__text {
+      font-size: 6.5rem;
+      letter-spacing: 0.8rem;
+    }
+
+    &::after {
+      width: 69rem;
+      height: 0.5rem;
+    }
+  }
+}
+
+// max-width: 768px
+@media (max-width: $screen-md) {
+  .main-header {
+    &__text {
+      font-size: 5.5rem;
+      letter-spacing: 0.6rem;
+    }
+
+    &::after {
+      width: 49rem;
+      height: 0.4rem;
+    }
+  }
+}
+
+// max-width: 576px
+@media (max-width: $screen-sm) {
+  .main-header {
+    &__text {
+      font-size: 4.5rem;
+      letter-spacing: 0.4rem;
+    }
+
+    &::after {
+      width: 30rem;
+      height: 0.4rem;
+      margin-top: 2.6rem;
+    }
+  }
+}
+
+// max-width: 478px
+@media (max-width: $screen-xsm) {
+  .main-header {
+    &__text {
+      font-size: 3.5rem;
+      letter-spacing: 0.2rem;
+    }
+
+    &::after {
+      width: 30rem;
+      height: 0.3rem;
+    }
+  }
 }

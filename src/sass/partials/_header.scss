@@ -106,6 +106,7 @@
   }
 }
 
+// max-width: 1200px
 @media (max-width: $screen-xl) {
   .header {
     &__content {
@@ -122,6 +123,7 @@
   }
 }
 
+// max-width: 992px
 @media (max-width: $screen-lg) {
   .header {
     &__first-text,
@@ -135,6 +137,7 @@
   }
 }
 
+// max-width: 768px
 @media (max-width: $screen-md) {
   .header {
     &__content {
@@ -172,6 +175,7 @@
   }
 }
 
+// max-width: 576px
 @media (max-width: $screen-sm) {
   .header {
     &__content {
@@ -207,6 +211,7 @@
   }
 }
 
+// max-width: 478px
 @media (max-width: $screen-xsm) {
   .header {
     &__first-text,
