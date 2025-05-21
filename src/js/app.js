@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import Contact from './components/Contact.js';
 import Home from './components/Home.js';
 import Product from './components/Product.js';
@@ -16,22 +17,26 @@ const app = {
     thisApp.intiPages();
     thisApp.initNavigation();
   },
-  intiPages: function() {
+  intiPages: function () {
     const thisApp = this;
     thisApp.dom.navigation = document.querySelectorAll(select.nav.links);
-    thisApp.dom.navigationContainer = document.querySelector(select.nav.container);
+    thisApp.dom.navigationContainer = document.querySelector(
+      select.nav.container
+    );
     thisApp.dom.pages = document.querySelectorAll(select.containerOf.pages);
   },
 
-  initNavigation: function() {
+  initNavigation: function () {
     const thisApp = this;
-    console.log('initNavigation');
-    // thisApp.dom.navigation = document.querySelectorAll(select.nav.links);
-    // thisApp.dom.navigationContainer = document.querySelector(select.nav.container);
-    // thisApp.dom.pages = document.querySelectorAll(select.containerOf.pages);
-    
-    thisApp.dom.navigation[0].classList.add(classNames.nav.active);
-    thisApp.home.dom.pageContainer.classList.add(classNames.pages.active);
+
+    const hashId = window.location.hash
+      ? window.location.hash.replace('#/', '')
+      : 'home';
+
+    thisApp.dom.navigation[thisApp.getActiveNavigation(hashId)].classList.add(
+      classNames.nav.active
+    );
+    thisApp[hashId].dom.pageContainer.classList.add(classNames.pages.active);
 
     thisApp.dom.navigationContainer.addEventListener('click', (event) => {
       thisApp.removeActiveNavigation();
@@ -40,35 +45,32 @@ const app = {
       console.log('============');
       thisApp.removeActivePages();
       const idFromHash = event.target.getAttribute('href').replace('#/', '');
-      thisApp[idFromHash].dom.pageContainer.classList.add(classNames.pages.active);
+      thisApp[idFromHash].dom.pageContainer.classList.add(
+        classNames.pages.active
+      );
     });
 
-
-
-
-    
-
-    // const navLinks = 
-  },  
-  initHome: function() {
+    // const navLinks =
+  },
+  initHome: function () {
     const thisApp = this;
     const homeElement = document.querySelector(select.containerOf.home);
     thisApp.home = new Home(homeElement);
   },
 
-  initProducts: function() {
+  initProducts: function () {
     const thisApp = this;
     const productsElement = document.querySelector(select.containerOf.products);
     thisApp.products = new Product(productsElement);
   },
 
-  initContact: function() {
+  initContact: function () {
     const thisApp = this;
     const contactElement = document.querySelector(select.containerOf.contact);
     thisApp.contact = new Contact(contactElement);
   },
 
-  initData: function() {
+  initData: function () {
     const url = settings.db.url + '/' + settings.db.products;
 
     this.data = {};
@@ -85,25 +87,38 @@ const app = {
       });
   },
 
+  getActiveNavigation(input) {
+    switch (input) {
+      case 'home':
+        return 0;
+      case 'products':
+        return 1;
+      case 'contact':
+        return 2;
+      default:
+        return 0;
+    }
+  },
+
   // TODO: refactor removeActivePages and removeActiveNavigation
-  removeActivePages: function() {
+  removeActivePages: function () {
     const thisApp = this;
 
     thisApp.dom.pages.forEach((item) => {
-      if(item.classList.contains(classNames.pages.active)) {
+      if (item.classList.contains(classNames.pages.active)) {
         item.classList.remove(classNames.pages.active);
       }
     });
   },
 
-  removeActiveNavigation: function() {
+  removeActiveNavigation: function () {
     const thisApp = this;
     thisApp.dom.navigation.forEach((item) => {
-      if(item.classList.contains(classNames.nav.active)) {
+      if (item.classList.contains(classNames.nav.active)) {
         item.classList.remove(classNames.nav.active);
       }
     });
-  }
+  },
 };
 
 app.init();
