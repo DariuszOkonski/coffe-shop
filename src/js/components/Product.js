@@ -9,20 +9,18 @@ class Product {
   }
 
   render(element, products) {
-    console.log('Products render: ', products);
-
     const thisProduct = this;
     thisProduct.dom = {};
-    thisProduct.dom.pageContainer = document.querySelector(select.pageContainerOf.products);
-    const generatedHTML = templates.productsPage({products});
+    thisProduct.dom.pageContainer = document.querySelector(
+      select.pageContainerOf.products
+    );
+    const generatedHTML = templates.productsPage({ products });
 
     thisProduct.dom.wrapper = element;
     thisProduct.dom.wrapper.innerHTML = generatedHTML;
   }
 
-  getData() {
-
-  }
+  getData() {}
 }
 
 export default Product;
