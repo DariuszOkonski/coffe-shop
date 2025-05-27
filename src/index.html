@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" >
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Coffe Shop</title>
 
     <link
@@ -12,8 +12,8 @@
       integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    >
-    <link rel="stylesheet" href="css/style.css" >
+    />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header class="header">
@@ -83,114 +83,75 @@
           <h2 class='main-header__text'>products</h2>
         </div>
         <div class='products__content container'>
-          <h1>PRODUCTS</h1>
-
-
           {{#each products}}
-            <h2>Hello</h2>
+            {{#ifEven @index}}
+              <div class='products__items products__items--reverse'>
+                <div class='products__item'>
+                  <div class='products__item-container'>
+                    <h2 class='products__item-title'>{{title}}</h2>
+                    <p class='products__item-text'>
+                      {{description}}
+                    </p>
+
+                    <div class='products__item-rating'>
+                      <div class='products__item-data'>
+                        <p class='products__item-data-text'>roasting:
+                          <span>{{roasting}}</span></p>
+                        <p class='products__item-data-text'>intensity:
+                          <span>{{intensity}}</span></p>
+                      </div>
+                      {{#if mostPopular}}
+                        <div class='products__item-badge products__item-badge'>
+                          <img
+                            src='./images/most-popular.jpg'
+                            alt='most popular badge'
+                          />
+                        </div>
+                      {{/if}}
+                    </div>
+                  </div>
+                </div>
+                <div class='products__item'>
+                  <div class='products__image'>
+                    <img src={{image}} alt='coffee 1' />
+                  </div>
+                </div>
+              </div>
+            {{else}}
+              <div class='products__items'>
+                <div class='products__item'>
+                  <div class='products__item-container'>
+                    <h2 class='products__item-title'>{{title}}</h2>
+                    <p class='products__item-text'>
+                      {{description}}
+                    </p>
+
+                    <div class='products__item-rating'>
+                      <div class='products__item-data'>
+                        <p class='products__item-data-text'>roasting:
+                          <span>{{roasting}}</span></p>
+                        <p class='products__item-data-text'>intensity:
+                          <span>{{intensity}}</span></p>
+                      </div>
+                      {{#if mostPopular}}
+                        <div class='products__item-badge'>
+                          <img
+                            src='./images/most-popular.jpg'
+                            alt='most popular badge'
+                          />
+                        </div>
+                      {{/if}}
+                    </div>
+                  </div>
+                </div>
+                <div class='products__item'>
+                  <div class='products__image'>
+                    <img src={{image}} alt='coffee 1' />
+                  </div>
+                </div>
+              </div>
+            {{/ifEven}}
           {{/each}}
-
-          <!-- <div class='products__items'>
-            <div class='products__item'>
-              <div class='products__item-container'>
-                <h2 class='products__item-title'>01. La lagartija</h2>
-                <p class='products__item-text'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-                  error eius doloremque repellat assumenda soluta sed, veritatis
-                  qui magnam quas, at, tempore voluptate est eveniet cumque
-                  obcaecati labore et saepe?
-                </p>
-
-                <div class='products__item-rating'>
-                  <div class='products__item-data'>
-                    <p class='products__item-data-text'>roasting:
-                      <span>5/10</span></p>
-                    <p class='products__item-data-text'>intensity:
-                      <span>6/10</span></p>
-                  </div>
-                  <div class='products__item-badge'>
-                    <img
-                      src='./images/most-popular.jpg'
-                      alt='most popular badge'
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class='products__item'>
-              <div class='products__image'>
-                <img src='./images/coffee-1.png' alt='coffee 1' />
-              </div>
-            </div>
-          </div> -->
-
-          <!-- <div class='products__items products__items--reverse'>
-            <div class='products__item'>
-              <div class='products__item-container'>
-                <h2 class='products__item-title'>01. La lagartija</h2>
-                <p class='products__item-text'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-                  error eius doloremque repellat assumenda soluta sed, veritatis
-                  qui magnam quas, at, tempore voluptate est eveniet cumque
-                  obcaecati labore et saepe?
-                </p>
-
-                <div class='products__item-rating'>
-                  <div class='products__item-data'>
-                    <p class='products__item-data-text'>roasting:
-                      <span>5/10</span></p>
-                    <p class='products__item-data-text'>intensity:
-                      <span>6/10</span></p>
-                  </div>
-                  <div class='products__item-badge products__item-badge--hide'>
-                    <img
-                      src='./images/most-popular.jpg'
-                      alt='most popular badge'
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class='products__item'>
-              <div class='products__image'>
-                <img src='./images/coffee-1.png' alt='coffee 1' />
-              </div>
-            </div>
-          </div> -->
-
-          <!-- <div class='products__items'>
-            <div class='products__item'>
-              <div class='products__item-container'>
-                <h2 class='products__item-title'>01. La lagartija</h2>
-                <p class='products__item-text'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-                  error eius doloremque repellat assumenda soluta sed, veritatis
-                  qui magnam quas, at, tempore voluptate est eveniet cumque
-                  obcaecati labore et saepe?
-                </p>
-
-                <div class='products__item-rating'>
-                  <div class='products__item-data'>
-                    <p class='products__item-data-text'>roasting:
-                      <span>5/10</span></p>
-                    <p class='products__item-data-text'>intensity:
-                      <span>6/10</span></p>
-                  </div>
-                  <div class='products__item-badge products__item-badge--hide'>
-                    <img
-                      src='./images/most-popular.jpg'
-                      alt='most popular badge'
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class='products__item'>
-              <div class='products__image'>
-                <img src='./images/coffee-1.png' alt='coffee 1' />
-              </div>
-            </div>
-          </div> -->
 
         </div>
       </section>

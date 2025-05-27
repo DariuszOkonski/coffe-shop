@@ -4,6 +4,14 @@ import Home from './components/Home.js';
 import Product from './components/Product.js';
 import { classNames, select, settings } from './settings.js';
 
+Handlebars.registerHelper('ifEven', function (index, options) {
+  if (index % 2 !== 0) {
+    return options.fn(this);
+  } else {
+    return options.inverse(this);
+  }
+});
+
 const app = {
   async init() {
     const thisApp = this;
@@ -55,7 +63,7 @@ const app = {
     const thisApp = this;
     const homeElement = document.querySelector(select.containerOf.home);
 
-    const { products } = thisApp.data
+    const { products } = thisApp.data;
     thisApp.home = new Home(homeElement, products);
   },
 
@@ -77,13 +85,12 @@ const app = {
     const url = settings.db.url + '/' + settings.db.products;
 
     this.data = {};
-    
+
     try {
       const rawResponse = await fetch(url);
       const parsedResponse = await rawResponse.json();
-  
-      this.data.products = parsedResponse
-      
+
+      this.data.products = parsedResponse;
     } catch (err) {
       console.log(err.message);
     }
