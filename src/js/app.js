@@ -5,11 +5,15 @@ import Product from './components/Product.js';
 import { classNames, select, settings } from './settings.js';
 
 const app = {
-  init: function () {
+  async init() {
     const thisApp = this;
     thisApp.dom = {};
 
-    thisApp.initData();
+    await thisApp.initData();
+    
+    console.log('init: ', thisApp)
+    console.log('init.data.products: ', thisApp.data.products)
+
     thisApp.initHome();
     thisApp.initProducts();
     thisApp.initContact();
@@ -69,21 +73,20 @@ const app = {
     thisApp.contact = new Contact(contactElement);
   },
 
-  initData: function () {
+  async initData() {
     const url = settings.db.url + '/' + settings.db.products;
 
     this.data = {};
-    fetch(url)
-      .then((rawResponse) => {
-        return rawResponse.json();
-      })
-      .then((parsedResponse) => {
-        this.data.products = parsedResponse;
-        // console.log('this.data: ', this.data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
+    
+    try {
+      const rawResponse = await fetch(url);
+      const parsedResponse = await rawResponse.json();
+  
+      this.data.products = parsedResponse
+      
+    } catch (err) {
+      console.log(err.message);
+    }
   },
 
   getActiveNavigation(input) {
