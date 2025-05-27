@@ -12,18 +12,11 @@ Handlebars.registerHelper('ifEven', function (index, options) {
 });
 
 const app = {
-  async init() {
+  init: function() {
     const thisApp = this;
     thisApp.dom = {};
 
-    await thisApp.initData();
-
-    thisApp.initHome();
-    thisApp.initProducts();
-    thisApp.initContact();
-
-    thisApp.initPages();
-    thisApp.initNavigation();
+    thisApp.initData();
   },
   initPages: function () {
     const thisApp = this;
@@ -78,31 +71,45 @@ const app = {
     thisApp.contact = new Contact(contactElement);
   },
 
-  async initData() {
+  initData: function() {
     const url = settings.db.url + '/' + settings.db.products;
+    const thisApp = this;
 
-    this.data = {};
+    thisApp.data = {};
 
-    try {
-      const rawResponse = await fetch(url);
-      const parsedResponse = await rawResponse.json();
+    fetch(url)
+      .then((response) => response.json())
+      .then((parsedResponse) => {
+        thisApp.data.products = parsedResponse;
 
-      this.data.products = parsedResponse;
-    } catch (err) {
-      console.log(err.message);
-    }
+        thisApp.initComponents();
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  },
+
+  initComponents: function () {
+    const thisApp = this;
+
+    thisApp.initHome();
+    thisApp.initProducts();
+    thisApp.initContact();
+
+    thisApp.initPages();
+    thisApp.initNavigation();
   },
 
   getActiveNavigation(input) {
     switch (input) {
-      case 'home':
-        return 0;
-      case 'products':
-        return 1;
-      case 'contact':
-        return 2;
-      default:
-        return 0;
+    case 'home':
+      return 0;
+    case 'products':
+      return 1;
+    case 'contact':
+      return 2;
+    default:
+      return 0;
     }
   },
 
