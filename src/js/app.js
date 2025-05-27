@@ -10,9 +10,6 @@ const app = {
     thisApp.dom = {};
 
     await thisApp.initData();
-    
-    console.log('init: ', thisApp)
-    console.log('init.data.products: ', thisApp.data.products)
 
     thisApp.initHome();
     thisApp.initProducts();
@@ -29,7 +26,6 @@ const app = {
     );
     thisApp.dom.pages = document.querySelectorAll(select.containerOf.pages);
   },
-
   initNavigation: function () {
     const thisApp = this;
 
@@ -58,13 +54,17 @@ const app = {
   initHome: function () {
     const thisApp = this;
     const homeElement = document.querySelector(select.containerOf.home);
-    thisApp.home = new Home(homeElement);
+
+    const { products } = thisApp.data
+    thisApp.home = new Home(homeElement, products);
   },
 
   initProducts: function () {
     const thisApp = this;
     const productsElement = document.querySelector(select.containerOf.products);
-    thisApp.products = new Product(productsElement);
+
+    const { products } = thisApp.data;
+    thisApp.products = new Product(productsElement, products);
   },
 
   initContact: function () {
