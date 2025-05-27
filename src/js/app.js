@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import Contact from './components/Contact.js';
 import Home from './components/Home.js';
 import Product from './components/Product.js';
@@ -23,10 +22,10 @@ const app = {
     thisApp.initProducts();
     thisApp.initContact();
 
-    thisApp.intiPages();
+    thisApp.initPages();
     thisApp.initNavigation();
   },
-  intiPages: function () {
+  initPages: function () {
     const thisApp = this;
     thisApp.dom.navigation = document.querySelectorAll(select.nav.links);
     thisApp.dom.navigationContainer = document.querySelector(
@@ -56,8 +55,6 @@ const app = {
         classNames.pages.active
       );
     });
-
-    // const navLinks =
   },
   initHome: function () {
     const thisApp = this;
