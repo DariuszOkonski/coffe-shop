@@ -7,7 +7,9 @@
       "image": "../images/coffee-1.png",
       "roasting": "5/10",
       "intensity": "6/10",
-      "mostPopular": true
+      "mostPopular": true,
+      "previousPrice": 12.99,
+      "currentPrice": 9.99
     },
     {
       "id": "ffedecf6-8eb6-4f3f-a026-e543f258ca14",
@@ -16,7 +18,9 @@
       "image": "../images/coffee-2.png",
       "roasting": "8/10",
       "intensity": "9/10",
-      "mostPopular": false
+      "mostPopular": false,
+      "previousPrice": 14.99,
+      "currentPrice": 11.99
     },
     {
       "id": "bd165c3c-7882-4a6d-babb-63a8f67723df",
@@ -25,7 +29,9 @@
       "image": "../images/coffee-3.png",
       "roasting": "3/10",
       "intensity": "7/10",
-      "mostPopular": false
+      "mostPopular": false,
+      "previousPrice": 13.99,
+      "currentPrice": 10.99
     }
   ]
 }
