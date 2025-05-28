@@ -21,7 +21,40 @@
     min-height: 30rem;
   }
 
+  &__prices {
+    position: relative;
+    overflow: hidden;
+  }
+
   &__price {
+    position: absolute;
+    top: -16%;
+    right: -17%;
+    width: 40%;
+    height: 40%;
+    background-color: $main-color;
+    transform: rotate(45deg);
+  }
+
+  &__previous-price,
+  &__current-price {
+    position: absolute;
+    transform: rotate(-45deg);
+    font-size: 1.6rem;
+    color: $light-color;
+  }
+
+  &__previous-price {
+    top: 74%;
+    left: 21%;
+    text-decoration: line-through;
+  }
+
+  &__current-price {
+    top: 68%;
+    left: 34%;
+    font-size: 2.8rem;
+    font-weight: 700;
   }
 
   //FIRST ITEM
@@ -105,8 +138,7 @@
   }
 }
 
-// max-width: 992px
-@media (max-width: $screen-lg) {
+@media (max-width: $screen-xl) {
   .products {
     &__items {
       flex-direction: column;
@@ -124,6 +156,18 @@
       margin: 0 auto;
       max-width: 36rem;
       max-height: 27rem;
+    }
+
+    &__previous-price {
+      top: 74%;
+      left: 21%;
+      font-size: 1.2rem;
+    }
+
+    &__current-price {
+      top: 68%;
+      left: 36%;
+      font-size: 1.8rem;
     }
   }
 }
