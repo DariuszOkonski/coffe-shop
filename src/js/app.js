@@ -23,7 +23,7 @@ const app = {
   initLoadingScreen() {
     const header = document.querySelector(select.home.header);
 
-    const time = Math.random() * 0.4 + 0.3;
+    const time = Math.random() * 0.3 + 0.2;
 
     console.log(time);
 
@@ -126,7 +126,6 @@ const app = {
     }
   },
 
-  // TODO: refactor removeActivePages and removeActiveNavigation
   removeActivePages: function () {
     const thisApp = this;
 
