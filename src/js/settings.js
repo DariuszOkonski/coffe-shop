@@ -1,6 +1,9 @@
 // this object is used for querySelect method
 export const select = {
-  home: {},
+  home: {
+    headerFirstText: '.header__first-text',
+    headerSecondText: '.header__second-text'
+  },
   contact: {},
   products: {},
   nav: {
