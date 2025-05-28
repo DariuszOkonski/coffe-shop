@@ -23,13 +23,11 @@ const app = {
   initLoadingScreen() {
     const header = document.querySelector(select.home.header);
 
-    const time = Math.random() * 0.3 + 0.2;
-
-    console.log(time);
+    const time = Math.floor((Math.random() * 0.4 + 0.5) * 1000); // Random time between 700ms and 1100ms
 
     setTimeout(() => {
       header.classList.add('hide-before');
-    }, 1000);
+    }, time);
   },
   initPages: function () {
     const thisApp = this;

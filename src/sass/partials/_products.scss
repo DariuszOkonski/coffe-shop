@@ -16,8 +16,12 @@
   }
 
   &__item {
+    position: relative;
     flex-basis: 50%;
     min-height: 30rem;
+  }
+
+  &__price {
   }
 
   //FIRST ITEM
