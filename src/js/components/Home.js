@@ -6,6 +6,7 @@ class Home {
   constructor(element, products) {
     const thisHome = this;
     thisHome.render(element, products);
+
     thisHome.displayRandomMainText(homeHeaderMainText);
   }
 
