@@ -12,11 +12,24 @@ Handlebars.registerHelper('ifEven', function (index, options) {
 });
 
 const app = {
-  init: function() {
+  init: function () {
     const thisApp = this;
     thisApp.dom = {};
 
+    this.initLoadingScreen();
+
     thisApp.initData();
+  },
+  initLoadingScreen() {
+    const header = document.querySelector(select.home.header);
+
+    const time = Math.random() * 0.4 + 0.3;
+
+    console.log(time);
+
+    setTimeout(() => {
+      header.classList.add('hide-before');
+    }, 1000);
   },
   initPages: function () {
     const thisApp = this;
@@ -71,7 +84,7 @@ const app = {
     thisApp.contact = new Contact(contactElement);
   },
 
-  initData: function() {
+  initData: function () {
     const url = settings.db.url + '/' + settings.db.products;
     const thisApp = this;
 

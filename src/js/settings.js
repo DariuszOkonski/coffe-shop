@@ -2,7 +2,8 @@
 export const select = {
   home: {
     headerFirstText: '.header__first-text',
-    headerSecondText: '.header__second-text'
+    headerSecondText: '.header__second-text',
+    header: '.header',
   },
   contact: {},
   products: {},
