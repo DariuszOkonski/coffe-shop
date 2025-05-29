@@ -20,7 +20,7 @@ const app = {
   },
   removeLoadingScreen() {
     const header = document.querySelector(select.home.header);
-    header.classList.add('hide-before');
+    header.classList.add(classNames.home.hide);
   },
   initPages: function () {
     const thisApp = this;

@@ -1,12 +1,9 @@
-// this object is used for querySelect method
 export const select = {
   home: {
     headerFirstText: '.header__first-text',
     headerSecondText: '.header__second-text',
     header: '.header',
   },
-  contact: {},
-  products: {},
   nav: {
     container: '.nav__list-items',
     links: '.nav__list-items a',
@@ -29,20 +26,18 @@ export const select = {
   },
 };
 
-// this object is used for adding, removing and toggling classes
 export const classNames = {
-  home: {},
-  contact: {},
-  products: {},
   nav: {
     active: 'active',
   },
   pages: {
     active: 'active',
   },
+  home: {
+    hide: 'hide-before',
+  },
 };
 
-// this object is used for constants
 export const settings = {
   db: {
     url: 'http://localhost:3232',
