@@ -16,18 +16,11 @@ const app = {
     const thisApp = this;
     thisApp.dom = {};
 
-    this.initLoadingScreen();
-
     thisApp.initData();
   },
-  initLoadingScreen() {
+  removeLoadingScreen() {
     const header = document.querySelector(select.home.header);
-
-    const time = Math.floor((Math.random() * 0.4 + 0.5) * 1000); // Random time between 700ms and 1100ms
-
-    setTimeout(() => {
-      header.classList.add('hide-before');
-    }, time);
+    header.classList.add('hide-before');
   },
   initPages: function () {
     const thisApp = this;
@@ -93,6 +86,7 @@ const app = {
       .then((parsedResponse) => {
         thisApp.data.products = parsedResponse;
 
+        thisApp.removeLoadingScreen();
         thisApp.initComponents();
       })
       .catch((err) => {
