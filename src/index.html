@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" >
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Coffe Shop</title>
 
     <link
@@ -12,8 +12,8 @@
       integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    >
-    <link rel="stylesheet" href="css/style.css" >
+    />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header class="header">
@@ -51,15 +51,70 @@
             <h2 class="main-header__text">about us</h2>
           </div>
           <div class="container">
-            <p class="about-us__text">
-              Who are we? Just a bunch of friends with a love for a good coffee
-              and desire to create something new, something original.
-            </p>
-            <p class="about-us__text">
-              Our coffees reflect us - young, wild and free. We are on the
-              journey of new tastes...
-            </p>
-            <span class="about-us__footer">Join us!</span>
+            <div class="embla">
+              <div class="embla__container">
+                <div class="embla__slide">
+                  <div class="embla__content">
+                    <div class="about-us__content">
+                      <div class="about-us__image">
+                        <img src="images/carousel/1.png" alt="picture" />
+                      </div>
+                      <div class="about-us__credentials">
+                        <h2 class="about-us__header">
+                          Elizabeth <span>Doherty</span>
+                        </h2>
+                        <p class="about-us__description">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Quis optio aperiam quo facilis autem dolores
+                          nobis impedit ipsam modi rerum, in aut aliquam
+                          blanditiis praesentium eos, amet dolore maiores alias!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="embla__slide">
+                  <div class="embla__content">
+                    <div class="about-us__content">
+                      <div class="about-us__image">
+                        <img src="images/carousel/1.png" alt="picture" />
+                      </div>
+                      <div class="about-us__credentials">
+                        <h2 class="about-us__header">
+                          Elizabeth <span>Doherty</span>
+                        </h2>
+                        <p class="about-us__description">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Quis optio aperiam quo facilis autem dolores
+                          nobis impedit ipsam modi rerum, in aut aliquam
+                          blanditiis praesentium eos, amet dolore maiores alias!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="embla__slide">
+                  <div class="embla__content">
+                    <div class="about-us__content">
+                      <div class="about-us__image">
+                        <img src="images/carousel/1.png" alt="picture" />
+                      </div>
+                      <div class="about-us__credentials">
+                        <h2 class="about-us__header">
+                          Elizabeth <span>Doherty</span>
+                        </h2>
+                        <p class="about-us__description">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Quis optio aperiam quo facilis autem dolores
+                          nobis impedit ipsam modi rerum, in aut aliquam
+                          blanditiis praesentium eos, amet dolore maiores alias!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </section>
@@ -113,10 +168,14 @@
                 </div>
                 <div class='products__item'>
                   <div class='products__image'>
-                    <div class="products__prices">
-                      <div class="products__price">
-                        <span class="products__previous-price">{{previousPrice}}$</span>
-                        <span class="products__current-price">{{currentPrice}}$</span>
+                    <div class='products__prices'>
+                      <div class='products__price'>
+                        <span
+                          class='products__previous-price'
+                        >{{previousPrice}}$</span>
+                        <span
+                          class='products__current-price'
+                        >{{currentPrice}}$</span>
                       </div>
                       <img src={{image}} alt='coffee 1' />
                     </div>
@@ -152,10 +211,14 @@
                 </div>
                 <div class='products__item'>
                   <div class='products__image'>
-                    <div class="products__prices">
-                      <div class="products__price">
-                        <span class="products__previous-price">{{previousPrice}}$</span>
-                        <span class="products__current-price">{{currentPrice}}$</span>
+                    <div class='products__prices'>
+                      <div class='products__price'>
+                        <span
+                          class='products__previous-price'
+                        >{{previousPrice}}$</span>
+                        <span
+                          class='products__current-price'
+                        >{{currentPrice}}$</span>
                       </div>
                       <img src={{image}} alt='coffee 1' />
                     </div>
@@ -200,5 +263,14 @@
 
     <script src="js/app.js" type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+    <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+    <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
+
+    <script type="text/javascript">
+      const emblaNode = document.querySelector('.embla');
+      const options = { loop: false };
+      const plugins = [EmblaCarouselAutoplay()];
+      const emblaApi = EmblaCarousel(emblaNode, options, plugins);
+    </script>
   </body>
 </html>

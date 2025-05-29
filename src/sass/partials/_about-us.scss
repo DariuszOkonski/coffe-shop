@@ -7,57 +7,81 @@
   min-height: 88.5rem;
   padding: 10rem 0.5rem;
 
-  &__text,
-  &__footer {
-    color: $light-color;
-    font-size: 4rem;
-    font-style: $font-style-secondary;
+  .container {
+    margin-top: 8rem;
   }
 
-  &__text {
-    margin: 6.8rem 0;
-    padding-right: 47.3rem;
+  .embla {
+    overflow: hidden;
+  }
+  .embla__container {
+    display: flex;
+  }
+  .embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
   }
 
-  &__footer {
-    display: block;
-    text-align: right;
+  .embla__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
-// max-width: 1200px
-@media (max-width: $screen-xl) {
-  .about-us {
-    &__text,
-    &__footer {
-      font-size: 3rem;
-    }
+.about-us {
+  &__content {
+    display: flex;
+    gap: 3rem;
+    max-width: 1000px;
+    color: $light-color;
+  }
 
-    &__text {
-      padding-right: 38rem;
+  &__image {
+    width: 750px;
+    img {
+      width: 100%;
+      height: 100%;
     }
+  }
+
+  &__credentials {
+    padding: 1rem;
+  }
+
+  &__header {
+    font-size: 4rem;
+    font-weight: 300;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__description {
+    margin-top: 3rem;
+    font-size: 2.4rem;
+    line-height: 1.4;
   }
 }
 
 // max-width: 992px
 @media (max-width: $screen-lg) {
   .about-us {
-    &__text {
-      padding-right: 26rem;
-    }
-  }
-}
-
-// max-width: 768px
-@media (max-width: $screen-md) {
-  .about-us {
-    &__text,
-    &__footer {
-      font-size: 3rem;
+    &__content {
+      flex-direction: column;
     }
 
-    &__text {
-      padding-right: 12rem;
+    &__image {
+      width: 350px;
+      margin: 0 auto;
+    }
+
+    &__credentials {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
@@ -65,27 +89,26 @@
 // max-width: 576px
 @media (max-width: $screen-sm) {
   .about-us {
-    &__text,
-    &__footer {
-      font-size: 2.6rem;
+    &__image {
+      width: 250px;
+      margin: 0 auto;
     }
 
-    &__text {
-      padding-right: 6rem;
-    }
-  }
-}
-
-// max-width: 478px
-@media (max-width: $screen-xsm) {
-  .about-us {
-    &__text,
-    &__footer {
-      font-size: 2rem;
+    &__credentials {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
-    &__text {
-      padding-right: 2rem;
+    &__header {
+      font-size: 3rem;
+    }
+
+    &__description {
+      margin-top: 2rem;
+      font-size: 1.6rem;
+      line-height: 1.4;
     }
   }
 }
