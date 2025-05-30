@@ -8,7 +8,7 @@ const middlewares = jsonServer.defaults({
   noCors: true,
 });
 // eslint-disable-next-line no-undef
-const port = process.env.PORT || 3131;
+const port = process.env.PORT || 3232;
 
 server.use(middlewares);
 server.use(router);
