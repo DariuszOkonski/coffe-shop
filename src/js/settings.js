@@ -40,7 +40,10 @@ export const classNames = {
 
 export const settings = {
   db: {
-    url: 'http://localhost:3232',
+    url:
+      '//' +
+      window.location.hostname +
+      (window.location.hostname == 'localhost' ? ':3232' : ''),
     products: 'products',
   },
 };
