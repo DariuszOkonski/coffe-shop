@@ -43,7 +43,7 @@ export const settings = {
     url:
       '//' +
       window.location.hostname +
-      (window.location.hostname == 'localhost' ? ':3232' : ''),
+      (window.location.hostname == 'localhost' ? ':3131' : ''),
     products: 'products',
   },
 };
